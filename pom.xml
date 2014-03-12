@@ -16,7 +16,7 @@
     <ignore.failures>true</ignore.failures>
     <threads>1</threads>
     <skip>false</skip>
-    <stories>**/CatMedievalDotComStories.java</stories>
+    <stories>**/CatMedievalStories.java</stories>
   </properties>
 
   <dependencyManagement>
@@ -288,7 +288,7 @@
     <profile>
       <id>annotated-embedder</id>
       <properties>
-        <stories>**/AnnotatedCatMedievalDotComStories.java</stories>
+        <stories>**/AnnotatedCatMedievalStories.java</stories>
       </properties>
       <build>
         <plugins>
