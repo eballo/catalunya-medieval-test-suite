@@ -18,4 +18,7 @@ public class AdvancedSearchPage  extends AbstractPage {
 		super(selenium, conditionRunner);
 	}
 
+	public void go(){
+		open("http://www.catalunyamedieval.es/cerca/");
+	}
 }

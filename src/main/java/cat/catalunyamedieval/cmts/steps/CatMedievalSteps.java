@@ -45,9 +45,11 @@ public class CatMedievalSteps {
 
 	@Then("validate page is loaded")
 	public void validatePageLoad() {
-		Assert.assertTrue(home.validatePageLoad());
+		Assert.assertTrue("Validation Failed!",home.validatePageLoad());
 	}
 
+	/* Testing */ 
+	
 	@Then("booom!")
 	public void booom() {
 		throw new RuntimeException("Booom!!");

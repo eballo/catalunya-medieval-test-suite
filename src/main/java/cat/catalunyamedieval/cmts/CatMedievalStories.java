@@ -51,7 +51,7 @@ public class CatMedievalStories extends JUnitStories {
     public Configuration configuration() {
         return new SeleniumConfiguration().useSeleniumContext(seleniumContext)
                 .usePendingStepStrategy(pendingStepStrategy)
-                .useStoryControls(new StoryControls().doResetStateBeforeScenario(false)).useStepMonitor(stepMonitor)
+                .useStoryControls(new StoryControls().doResetStateBeforeScenario(true)).useStepMonitor(stepMonitor)
                 .useStoryLoader(new LoadFromClasspath(CatMedievalStories.class))
                 .useStoryReporterBuilder(reporterBuilder);
     }
