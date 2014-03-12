@@ -39,9 +39,9 @@ import org.junit.runner.RunWith;
 @Configure(using = SeleniumConfiguration.class, pendingStepStrategy = FailingUponPendingStep.class)
 @UsingEmbedder(embedder = Embedder.class, generateViewAfterStories = true, ignoreFailureInStories = true, ignoreFailureInView = false, storyTimeoutInSecs = 100, threads = 1, metaFilters = "-skip")
 @UsingSpring(resources = { "catalunya-medieval-application-context.xml" })
-public class AnnotatedCatMedievalDotComStories extends InjectableEmbedder {
+public class AnnotatedCatMedievalStories extends InjectableEmbedder {
 
-	public AnnotatedCatMedievalDotComStories() {
+	public AnnotatedCatMedievalStories() {
 	}
 
 	@Test
@@ -61,7 +61,7 @@ public class AnnotatedCatMedievalDotComStories extends InjectableEmbedder {
 
 		StoryReporterBuilder reporterBuilder = new StoryReporterBuilder()
 				.withCodeLocation(
-						codeLocationFromClass(CatMedievalDotComStories.class))
+						codeLocationFromClass(CatMedievalStories.class))
 				.withFailureTrace(true).withFailureTraceCompression(true)
 				.withDefaultFormats().withFormats(formats)
 				.withCrossReference(crossReference);
@@ -79,7 +79,7 @@ public class AnnotatedCatMedievalDotComStories extends InjectableEmbedder {
 				.useStoryControls(storyControls)
 				.useStepMonitor(stepMonitor)
 				.useStoryLoader(
-						new LoadFromClasspath(CatMedievalDotComStories.class))
+						new LoadFromClasspath(CatMedievalStories.class))
 				.useStoryReporterBuilder(reporterBuilder);
 
 		if (configuration instanceof SeleniumConfiguration) {

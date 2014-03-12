@@ -13,7 +13,7 @@
      <constructor-arg ref="cmtsConditionRunner"/>
   </bean>  
   
-  <bean id="catMedievalSteps" class="cat.catalunyamedieval.cmts.steps.CatMedievalDotComSteps">
+  <bean id="catMedievalSteps" class="cat.catalunyamedieval.cmts.steps.CatMedievalSteps">
      <constructor-arg ref="pageFactory"/>
   </bean>  
 

@@ -32,7 +32,7 @@ import static org.jbehave.web.selenium.WebDriverHtmlOutput.WEB_DRIVER_HTML;
  * @author Enric Ballo
  *
  */
-public class CatMedievalDotComStories extends JUnitStories {
+public class CatMedievalStories extends JUnitStories {
 
     PendingStepStrategy pendingStepStrategy = new FailingUponPendingStep();
     CrossReference crossReference = new CrossReference().withJsonOnly().withPendingStepStrategy(pendingStepStrategy)
@@ -43,7 +43,7 @@ public class CatMedievalDotComStories extends JUnitStories {
             crossReference.getStepMonitor());
     Format[] formats = new Format[] { new SeleniumContextOutput(seleniumContext), CONSOLE, WEB_DRIVER_HTML };
     StoryReporterBuilder reporterBuilder = new StoryReporterBuilder()
-            .withCodeLocation(codeLocationFromClass(CatMedievalDotComStories.class)).withFailureTrace(true)
+            .withCodeLocation(codeLocationFromClass(CatMedievalStories.class)).withFailureTrace(true)
             .withFailureTraceCompression(true).withDefaultFormats().withFormats(formats)
             .withCrossReference(crossReference);
 
@@ -52,7 +52,7 @@ public class CatMedievalDotComStories extends JUnitStories {
         return new SeleniumConfiguration().useSeleniumContext(seleniumContext)
                 .usePendingStepStrategy(pendingStepStrategy)
                 .useStoryControls(new StoryControls().doResetStateBeforeScenario(false)).useStepMonitor(stepMonitor)
-                .useStoryLoader(new LoadFromClasspath(CatMedievalDotComStories.class))
+                .useStoryLoader(new LoadFromClasspath(CatMedievalStories.class))
                 .useStoryReporterBuilder(reporterBuilder);
     }
 

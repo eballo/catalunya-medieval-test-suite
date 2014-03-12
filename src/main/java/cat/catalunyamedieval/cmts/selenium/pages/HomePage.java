@@ -1,4 +1,4 @@
-package cat.catalunyamedieval.cmts.pages;
+package cat.catalunyamedieval.cmts.selenium.pages;
 
 import com.thoughtworks.selenium.Selenium;
 import com.thoughtworks.selenium.condition.ConditionRunner;

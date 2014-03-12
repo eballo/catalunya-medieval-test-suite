@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cat.catalunyamedieval.cmts.pages;
+package cat.catalunyamedieval.cmts.selenium.pages;
 
 import java.util.List;
 

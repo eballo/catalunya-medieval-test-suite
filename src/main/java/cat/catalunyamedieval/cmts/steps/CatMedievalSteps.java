@@ -5,9 +5,9 @@ import junit.framework.Assert;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 
-import cat.catalunyamedieval.cmts.pages.HomePage;
-import cat.catalunyamedieval.cmts.pages.PageFactory;
-import cat.catalunyamedieval.cmts.pages.AdvancedSearchPage;
+import cat.catalunyamedieval.cmts.selenium.pages.AdvancedSearchPage;
+import cat.catalunyamedieval.cmts.selenium.pages.HomePage;
+import cat.catalunyamedieval.cmts.selenium.pages.PageFactory;
 
 /**
  * Jbehave Steps for Catalunya Medieval
@@ -15,12 +15,12 @@ import cat.catalunyamedieval.cmts.pages.AdvancedSearchPage;
  * @author Enric Ballo
  *
  */
-public class CatMedievalDotComSteps {
+public class CatMedievalSteps {
 
 	private HomePage home;
 	private AdvancedSearchPage search; 
 
-	public CatMedievalDotComSteps(PageFactory pageFactory) {
+	public CatMedievalSteps(PageFactory pageFactory) {
 		home = pageFactory.newHome();
 		search = pageFactory.newSearch();
 	}
