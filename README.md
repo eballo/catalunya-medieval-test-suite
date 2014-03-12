@@ -1,8 +1,8 @@
-# catalunyamedieval.es using Java and Spring
+# Testing Catalunya Medieval using Java and Spring
 
-This tutorial uses JBehave 3.x and Selenium 1.x to test [catalunyamedieval.es](http://catalunyamedieval.es).
+This tutorial uses JBehave 3.x and Selenium (RC) 1.x to test [catalunyamedieval.es](http://catalunyamedieval.es).
 
-<img src="http://jbehave.org/reference/preview/images/jbehave-logo.png" alt="JBehave logo" align="right" />
+<img src="http://www.catalunyamedieval.es/wp-content/themes/catalunyamedieval/images/logo/logoCM-red-mini.png" alt="Catalunya Medieval logo" align="right" />
 
 ## Running the stories
 
@@ -10,9 +10,9 @@ This will run the build and (after a minute or so) Firefox will open and test th
 
     mvn install 
 
-You should see Firefox (installed on your system) flicker as it tests Etsy.com
+You should see Firefox (installed on your system) flicker as it tests catalunyamedieval.es
 
-This will run a single story (one contained in a etsy_cart.story file):
+This will run a single story (one contained in a validate_domain.story.story file):
 
     mvn install -DstoryFilter=validate_domain
 
