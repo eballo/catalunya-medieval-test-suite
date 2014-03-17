@@ -26,7 +26,8 @@ import org.springframework.context.ApplicationContext;
 import static java.util.Arrays.asList;
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 import static org.jbehave.core.reporters.Format.CONSOLE;
-import static org.jbehave.web.selenium.WebDriverHtmlOutput.WEB_DRIVER_HTML;
+import static org.jbehave.core.reporters.Format.XML;
+import static org.jbehave.core.reporters.Format.TXT;
 
 /**
  * @author Enric Ballo
@@ -41,7 +42,7 @@ public class CatMedievalStories extends JUnitStories {
     SeleniumContext seleniumContext = new SeleniumContext();
     SeleniumStepMonitor stepMonitor = new SeleniumStepMonitor(contextView, seleniumContext,
             crossReference.getStepMonitor());
-    Format[] formats = new Format[] { new SeleniumContextOutput(seleniumContext), CONSOLE, WEB_DRIVER_HTML };
+    Format[] formats = new Format[] { new SeleniumContextOutput(seleniumContext), CONSOLE, XML, TXT };
     StoryReporterBuilder reporterBuilder = new StoryReporterBuilder()
             .withCodeLocation(codeLocationFromClass(CatMedievalStories.class)).withFailureTrace(true)
             .withFailureTraceCompression(true).withDefaultFormats().withFormats(formats)
