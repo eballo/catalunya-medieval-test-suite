@@ -19,6 +19,6 @@ Then show the results page with 1 results
 Scenario: Search for a castell de montjuic
 Given the advanced search page
 Then search with text Montjuic
-Then search with comarca Barcelonès
+Then search with comarca BarcelonÃ¨s
 When submit the form
 Then show the results page with 1 results
