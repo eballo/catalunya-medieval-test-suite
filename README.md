@@ -1,8 +1,10 @@
 # Testing Catalunya Medieval using Java and Spring
 
-This tutorial uses JBehave 3.x and Selenium (RC) 1.x to test [catalunyamedieval.es](http://catalunyamedieval.es).
+This tutorial uses JBehave 3.x and Selenium 2.0 to test [catalunyamedieval.es](http://catalunyamedieval.es).
 
 <img src="http://www.catalunyamedieval.es/wp-content/themes/catalunyamedieval/images/logo/logoCM-red-mini.png" alt="Catalunya Medieval logo" align="right" />
+
+[![Build Status](https://travis-ci.org/eballo/catalunya-medieval-test-suite.svg?branch=master)](https://travis-ci.org/eballo/catalunya-medieval-test-suite)
 
 ## Running the stories
 
