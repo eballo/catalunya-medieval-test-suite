@@ -4,8 +4,23 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-	<import resource="classpath:catalunya-medieval-selenium.xml" />
-	<import resource="classpath:catalunya-medieval-steps.xml" />
+	<bean id="driverProvider" class="org.jbehave.web.selenium.FirefoxWebDriverProvider"/>
+
+	<bean id="webDriverProvider" class="org.jbehave.web.selenium.PerStoryWebDriverSteps">
+		<constructor-arg ref="driverProvider" />
+	</bean>
+
+	<bean id="lifecycleSteps" class="cat.catalunyamedieval.cmts.steps.LifecycleSteps">
+		<constructor-arg ref="driverProvider" />
+	</bean>
+
+	<bean id="pageFactory" class="cat.catalunyamedieval.cmts.selenium.pages.PageFactory">
+		<constructor-arg ref="driverProvider" />
+	</bean>
+
+	<bean id="catMedievalSteps" class="cat.catalunyamedieval.cmts.steps.CatMedievalSteps">
+		<constructor-arg ref="pageFactory" />
+	</bean>
 
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">

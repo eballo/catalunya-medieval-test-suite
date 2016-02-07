@@ -3,8 +3,7 @@
  */
 package cat.catalunyamedieval.cmts.selenium.pages;
 
-import com.thoughtworks.selenium.Selenium;
-import com.thoughtworks.selenium.condition.ConditionRunner;
+import org.jbehave.web.selenium.WebDriverProvider;
 
 /**
  * Selenium Page for History Page
@@ -14,8 +13,8 @@ import com.thoughtworks.selenium.condition.ConditionRunner;
  */
 public class HistoryPage extends AbstractPage {
 
-	public HistoryPage(Selenium selenium, ConditionRunner conditionRunner) {
-		super(selenium, conditionRunner);
+	public HistoryPage(WebDriverProvider driverProvider) {
+		super(driverProvider);
 	}
 
 }

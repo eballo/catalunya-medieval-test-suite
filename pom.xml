@@ -8,11 +8,11 @@
   <description>JBehave stories verifying functionality of catalunyamedieval.es using Java and Spring</description>
 
   <properties>
-    <jbehave.core.version>3.7.4</jbehave.core.version>
-    <jbehave.web.version>3.5.5</jbehave.web.version>
-    <jbehave.site.version>3.1.1</jbehave.site.version>
-    <fluent.selenium.version>1.5.1</fluent.selenium.version>
-    <selenium.version>2.21.0</selenium.version>
+    <jbehave.core.version>3.6-beta-1</jbehave.core.version>
+    <jbehave.web.version>3.6-beta-1</jbehave.web.version>
+    <jbehave.site.version>3.3</jbehave.site.version>
+    <fluent.selenium.version>1.14.5</fluent.selenium.version>
+    <selenium.version>2.48.2</selenium.version>
     <ignore.failures>true</ignore.failures>
     <threads>1</threads>
     <skip>false</skip>

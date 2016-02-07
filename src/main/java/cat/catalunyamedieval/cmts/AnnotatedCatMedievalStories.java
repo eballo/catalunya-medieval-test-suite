@@ -47,39 +47,30 @@ public class AnnotatedCatMedievalStories extends InjectableEmbedder {
 	@Test
 	public void run() throws Throwable {
 
-		CrossReference crossReference = new CrossReference().withJsonOnly()
-				.withOutputAfterEachStory(true);
+		CrossReference crossReference = new CrossReference().withJsonOnly().withOutputAfterEachStory(true);
 
 		ContextView contextView = new LocalFrameContextView().sized(640, 120);
 
 		SeleniumContext seleniumContext = new SeleniumContext();
-		SeleniumStepMonitor stepMonitor = new SeleniumStepMonitor(contextView,
-				seleniumContext, crossReference.getStepMonitor());
+		SeleniumStepMonitor stepMonitor = new SeleniumStepMonitor(contextView, seleniumContext,
+				crossReference.getStepMonitor());
 
-		Format[] formats = new Format[] {
-				new SeleniumContextOutput(seleniumContext), CONSOLE, XML, HTML };
+		Format[] formats = new Format[] { new SeleniumContextOutput(seleniumContext), CONSOLE, XML, HTML };
 
 		StoryReporterBuilder reporterBuilder = new StoryReporterBuilder()
-				.withCodeLocation(
-						codeLocationFromClass(CatMedievalStories.class))
-				.withFailureTrace(true).withFailureTraceCompression(true)
-				.withDefaultFormats().withFormats(formats)
+				.withCodeLocation(codeLocationFromClass(CatMedievalStories.class)).withFailureTrace(true)
+				.withFailureTraceCompression(true).withDefaultFormats().withFormats(formats)
 				.withCrossReference(crossReference);
 
 		StoryControls storyControls = new StoryControls()
 				// doResetStateBeforeScenario important to be set up as true in
 				// order to continue with the
 				// all the scenarios in one stroy
-				.doResetStateBeforeScenario(true).doDryRun(false)
-				.doSkipScenariosAfterFailure(false);
+				.doResetStateBeforeScenario(true).doDryRun(false).doSkipScenariosAfterFailure(false);
 
 		Configuration configuration = injectedEmbedder().configuration();
-		configuration
-				.useFailureStrategy(new FailingUponPendingStep())
-				.useStoryControls(storyControls)
-				.useStepMonitor(stepMonitor)
-				.useStoryLoader(
-						new LoadFromClasspath(CatMedievalStories.class))
+		configuration.useFailureStrategy(new FailingUponPendingStep()).useStoryControls(storyControls)
+				.useStepMonitor(stepMonitor).useStoryLoader(new LoadFromClasspath(CatMedievalStories.class))
 				.useStoryReporterBuilder(reporterBuilder);
 
 		if (configuration instanceof SeleniumConfiguration) {
@@ -91,9 +82,7 @@ public class AnnotatedCatMedievalStories extends InjectableEmbedder {
 	}
 
 	protected List<String> storyPaths() {
-		return new StoryFinder().findPaths(
-				codeLocationFromClass(this.getClass()).getFile(), asList("**/"
-						+ System.getProperty("storyFilter", "*") + ".story"),
-				null);
+		return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()).getFile(),
+				asList("**/" + System.getProperty("storyFilter", "*") + ".story"), null);
 	}
 }

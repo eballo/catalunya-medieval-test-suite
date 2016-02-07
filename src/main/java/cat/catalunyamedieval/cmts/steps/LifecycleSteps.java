@@ -1,9 +1,6 @@
 package cat.catalunyamedieval.cmts.steps;
 
-import org.jbehave.core.annotations.AfterScenario;
-import org.jbehave.core.annotations.BeforeScenario;
-
-import com.thoughtworks.selenium.Selenium;
+import org.jbehave.web.selenium.WebDriverProvider;
 
 /**
  * Life Cycle Steps
@@ -13,21 +10,9 @@ import com.thoughtworks.selenium.Selenium;
  */
 public class LifecycleSteps {
 
-    /** The Selenium object used to use Selenium RC. */
-    private Selenium selenium;
+	private final WebDriverProvider webDriverProvider;
 
-    public LifecycleSteps(Selenium selenium) {
-    	this.selenium = selenium;
-    }
-
-    @BeforeScenario
-    public void startSelenium() {
-        selenium.start();
-        selenium.windowMaximize();
-    }
-
-    @AfterScenario
-    public void shutDownSelenium() {
-        selenium.stop();
-    }
+	public LifecycleSteps(WebDriverProvider webDriverProvider) {
+		this.webDriverProvider = webDriverProvider;
+	}
 }

@@ -22,27 +22,28 @@ import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
  */
 public class CatMedievalStoryMaps extends JUnitStoryMaps {
 
-    public CatMedievalStoryMaps() {
-        configuredEmbedder().useMetaFilters(metaFilters());
-    }
+	public CatMedievalStoryMaps() {
+		configuredEmbedder().useMetaFilters(metaFilters());
+	}
 
-    @Override
-    public Configuration configuration() {
-        return new MostUsefulConfiguration()
-            .useStoryParser(new RegexStoryParser(new ExamplesTableFactory(new LoadFromClasspath(this.getClass()))))
-            .useStoryReporterBuilder(new StoryReporterBuilder()
-                .withCodeLocation(CodeLocations.codeLocationFromClass(this.getClass())));
-    }
+	@Override
+	public Configuration configuration() {
+		return new MostUsefulConfiguration()
+				.useStoryParser(new RegexStoryParser(new ExamplesTableFactory(new LoadFromClasspath(this.getClass()))))
+				.useStoryReporterBuilder(new StoryReporterBuilder()
+						.withCodeLocation(CodeLocations.codeLocationFromClass(this.getClass())));
+	}
 
-    @Override
-    protected List<String> metaFilters() {
-        return asList(); // will be specified by values in the pom.xml file when run from Maven
-    }
+	@Override
+	protected List<String> metaFilters() {
+		return asList(); // will be specified by values in the pom.xml file when
+							// run from Maven
+	}
 
-    @Override
-    protected List<String> storyPaths() {
-        return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), "**/stories/*.story", "");
+	@Override
+	protected List<String> storyPaths() {
+		return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), "**/stories/*.story", "");
 
-    }
+	}
 
 }

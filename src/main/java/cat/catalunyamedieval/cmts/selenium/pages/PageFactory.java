@@ -1,30 +1,27 @@
 package cat.catalunyamedieval.cmts.selenium.pages;
 
-import com.thoughtworks.selenium.Selenium;
-import com.thoughtworks.selenium.condition.ConditionRunner;
+import org.jbehave.web.selenium.WebDriverProvider;
 
 /**
- * Page Factory 
+ * Page Factory
  * 
  * @author Enric Ballo
  *
  */
 public class PageFactory {
 
-    protected final Selenium selenium;
-    protected final ConditionRunner conditionRunner;
+	private final WebDriverProvider driverProvider;
 
-    public PageFactory(Selenium selenium, ConditionRunner conditionRunner) {
-        this.selenium = selenium;
-        this.conditionRunner = conditionRunner;
-    }
+	public PageFactory(WebDriverProvider driverProvider) {
+		this.driverProvider = driverProvider;
+	}
 
-    public HomePage newHome() {
-        return new HomePage(this.selenium, this.conditionRunner);
-    }
+	public HomePage newHome() {
+		return new HomePage(driverProvider);
+	}
 
-    public AdvancedSearchPage newSearch() {
-        return new AdvancedSearchPage(this.selenium, this.conditionRunner);
-    }
-    
+	public AdvancedSearchPage newAdvancedSearch() {
+		return new AdvancedSearchPage(driverProvider);
+	}
+
 }
