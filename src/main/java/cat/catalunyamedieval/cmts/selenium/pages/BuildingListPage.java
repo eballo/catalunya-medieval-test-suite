@@ -3,18 +3,18 @@
  */
 package cat.catalunyamedieval.cmts.selenium.pages;
 
-import com.thoughtworks.selenium.Selenium;
-import com.thoughtworks.selenium.condition.ConditionRunner;
+import org.jbehave.web.selenium.WebDriverProvider;
 
 /**
  * Selenium Page for Buildings List Page
- * @author Enric Ballo 
+ * 
+ * @author Enric Ballo
  *
  */
 public class BuildingListPage extends AbstractPage {
 
-	public BuildingListPage(Selenium selenium, ConditionRunner conditionRunner) {
-		super(selenium, conditionRunner);
+	public BuildingListPage(WebDriverProvider driverProvider) {
+		super(driverProvider);
 	}
 
 }

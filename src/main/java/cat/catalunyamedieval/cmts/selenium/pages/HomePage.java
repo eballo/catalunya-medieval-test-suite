@@ -1,7 +1,6 @@
 package cat.catalunyamedieval.cmts.selenium.pages;
 
-import com.thoughtworks.selenium.Selenium;
-import com.thoughtworks.selenium.condition.ConditionRunner;
+import org.jbehave.web.selenium.WebDriverProvider;
 
 /**
  * Selenium Page for Home Page
@@ -11,19 +10,18 @@ import com.thoughtworks.selenium.condition.ConditionRunner;
  */
 public class HomePage extends AbstractPage {
 
-    private static final String CATALUNYA_MEDIEVAL = "Catalunya Medieval";
+	private static final String CATALUNYA_MEDIEVAL = "Catalunya Medieval";
 
-	public HomePage(Selenium selenium, ConditionRunner conditionRunner) {
-        super(selenium, conditionRunner);
-    }
+	public HomePage(WebDriverProvider driverProvider) {
+		super(driverProvider);
+	}
 
-    public void go(final String url) {
-    	open(url);
-    	waitForPageToLoad(WAIT_FOR_PAGE_TO_LOAD_INTERVAL_MSEC);
-    }
-    
-    public boolean validatePageLoad(){
-    	return isTextPresent(CATALUNYA_MEDIEVAL);
-    }
+	public void go(final String url) {
+		get(url);
+	}
+
+	public boolean validatePageLoad() {
+		return getPageSource().contains(CATALUNYA_MEDIEVAL);
+	}
 
 }
