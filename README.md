@@ -4,6 +4,8 @@ This tutorial uses JBehave 3.x and Selenium 2.0 to test [catalunyamedieval.es](h
 
 <img src="http://www.catalunyamedieval.es/wp-content/themes/catalunyamedieval/images/logo/logoCM-red-mini.png" alt="Catalunya Medieval logo" align="right" />
 
+[![Build Status](https://travis-ci.org/eballo/catalunya-medieval-test-suite.svg?branch=master)](https://travis-ci.org/eballo/catalunya-medieval-test-suite)
+
 ## Running the stories
 
 This will run the build and (after a minute or so) Firefox will open and test the catalunyamedieval.es website:
